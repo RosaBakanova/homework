@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner vc= new Scanner(System.in);
+		System.out.println("¬ведите координаты первого вектора");
+		System.out.print("x1 = ");
+		int x1 = vc.nextInt();  
+		System.out.print("y1 = ");
+		int y1 = vc.nextInt();  
+		System.out.println("¬ведите координаты второго вектора");
+		System.out.print("x2 = ");
+		int x2 = vc.nextInt();  
+		System.out.print("y2 = ");
+		int y2 = vc.nextInt();  
+		System.out.println("¬аше действие :");  
+		String oper = vc.nextLine();  
+	}
+
+}

@@ -1,0 +1,54 @@
+import  java.util.Date;
+import java.util.GregorianCalendar;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+GregorianCalendar gc = new GregorianCalendar();
+		
+		int today = gc.get(GregorianCalendar.DAY_OF_MONTH);
+		int month = gc.get(GregorianCalendar.MONTH);
+		
+		//Установка объекта d на первое число месяца.
+		gc.set((GregorianCalendar.DAY_OF_MONTH),1);
+		int weekday = gc.get(GregorianCalendar.DAY_OF_WEEK);
+		
+		// Вывод заголовка таблицы
+		System.out.println("  Mon   Tue   Wed   Tru   Fri   Sat  Sun");
+		
+		//Сдвиг записи на 1 число месяца
+		for(int i = GregorianCalendar.MONDAY; i<weekday;i++)
+			System.out.print("      ");
+		do
+		{
+			//Вывод дня месяца
+			int day = gc.get(GregorianCalendar.DAY_OF_MONTH);
+			System.out.printf("%5d",day);
+			
+			//Символом * помечаем текущий день
+			if (day == today)
+				System.out.print("*");
+			else
+				System.out.print(" ");
+			
+			//После каждой субботы начинается новая строка
+			if (weekday == GregorianCalendar.SUNDAY)
+				System.out.println();
+			
+			//перевод d на следующий день
+			gc.add((GregorianCalendar.DAY_OF_MONTH),1);
+			weekday = gc.get(GregorianCalendar.DAY_OF_WEEK);
+		}
+		while(gc.get(GregorianCalendar.MONTH) == month);
+		
+		//Перевод курсора на новую строку
+		if (weekday != GregorianCalendar.MONDAY)
+			System.out.println();
+		
+	}
+
+
+	}
+
+

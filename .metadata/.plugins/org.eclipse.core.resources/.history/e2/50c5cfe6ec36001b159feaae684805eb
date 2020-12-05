@@ -1,0 +1,18 @@
+package lesson39;
+import java.util.*;
+public class View {
+
+	public static void main(String[] args) {
+		  
+			Scanner sc= new Scanner(System.in);    //System.in is a standard input stream  
+			System.out.print("Enter first number- ");  
+			double a= sc.nextDouble();  
+			System.out.print("Enter second number- ");  
+			double b= sc.nextDouble();  
+			System.out.print("operator ");  
+			String operator = sc.nextLine();  
+			Model calculator = new Model ();
+			System.out.println(a+" "+operator+" "+b);
+	}
+
+}
